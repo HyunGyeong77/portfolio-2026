@@ -2,7 +2,7 @@
 
 import styles from './loading.module.scss';
 import LoadingGif from './assets/loading.gif';
-import LoadingSvg from './components/LoadingSvg';
+import ProgressBar from './components/ProgressBar';
 import Image from 'next/image';
 import {useState, useEffect, useRef} from 'react';
 
@@ -42,7 +42,7 @@ export default function Loading() {
       <div className={styles.loading__inner}>
           <Image className={styles.loading__gif} src={LoadingGif} alt="loading gif" width={37} height={6} loading="eager" />
           <div className={styles.loading__progressbar}>
-            <LoadingSvg />
+            <ProgressBar />
             <div className={styles["loading__progress-box"]}>
               <span className={styles["loading__percent"]}>{percent}%</span>
               <div className={styles.loading__progress} style={{width: `${percent}%`}}></div>

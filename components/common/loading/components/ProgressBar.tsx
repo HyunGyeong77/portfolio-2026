@@ -1,4 +1,4 @@
-export default function LoadingSvg() {
+export default function ProgressBar() {
   return (
     <svg 
       version="1.1" 
