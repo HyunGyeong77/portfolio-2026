@@ -1,9 +1,9 @@
-export default function LoadingSvg({width = "32", height = "6"}: {width: string, height: string}) {
+export default function LoadingSvg() {
   return (
     <svg 
       version="1.1" 
-      width={width} 
-      height={height} 
+      width="100%"
+      height="100%"
       viewBox="0 0 32 6"
       xmlns="http://www.w3.org/2000/svg" 
       shape-rendering="crispEdges"

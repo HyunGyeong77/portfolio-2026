@@ -8,7 +8,7 @@ export default function Loading() {
     <div className={styles.loading}>
         <Image className={styles.loading__gif} src={LoadingGif} alt="loading gif" width={37} height={6} />
         <div className={styles.loading__progressbar}>
-          <LoadingSvg width="250" height="47" />
+          <LoadingSvg />
           <div className={styles["loading__progress-box"]}>
             <span className={styles["loading__percent"]}></span>
             <div className={styles.loading__progress}></div>
