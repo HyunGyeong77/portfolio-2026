@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+## 📌프로젝트 소개
 
-First, run the development server:
+이 프로젝트는 모바일 게임의 도트(pixel) UI에서 영감을 받아 제작한 포트폴리오 웹사이트입니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Github API를 활용하여 제 Github 정보를 게임 상태창 형태의 UI로 표현했으며,   
+레트로 게임 감성과 웹 포트폴리오의 가독성을 함께 고려한 인터페이스를 구현했습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+또한 네비게이션을 통해 사용자가 게임 메뉴를 탐색하듯 포트폴리오를 탐색할 수 있도록 UX를 설계했습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗링크
+https://portfolio-2026-hazel.vercel.app/
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️기술 스택
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔹 Frontend
+- ⚛️ **React / Next.js**
+- 📘 **TypeScript**
+- 🎨 **SCSS**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+🔹 Version Control
+- 🔧 **Git**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔹 Design
+- 🖌️ **Figma**
+
+<br>
+
+## 📝작업 과정
+
+시작 년도 (2026)
+
+### 📅 1주차 (2/26 ~ 3/04)
+
+- 1️⃣ **Asset 작업 완료** | 포트폴리오 UI에 사용될 도트 스타일 에셋 제작
+
+- 1️⃣ **UI 디자인 완료** │ Figma를 활용한 데스크탑/모바일 UI 디자인 완료
