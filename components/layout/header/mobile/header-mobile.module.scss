@@ -1,8 +1,9 @@
 .header {
+  position: relative;
   display: flex;
   justify-content: right;
 
-  > .header__hamburger {
+  > .header__menu-btn {
     display: flex;
   }
 }
