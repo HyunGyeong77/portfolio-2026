@@ -71,7 +71,8 @@ export default function Loading() {
             alt="loading image" 
             width={37} 
             height={6} 
-            loading="eager" 
+            loading="eager"
+            unoptimized
           />
           <div className={styles.loading__progressbar}>
             <ProgressBar />
