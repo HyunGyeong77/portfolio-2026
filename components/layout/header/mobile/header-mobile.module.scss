@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  justify-content: right;
+
+  > .header__hamburger {
+    display: flex;
+  }
+}
