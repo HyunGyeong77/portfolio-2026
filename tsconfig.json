@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@common/*": ["./components/common/*"]
+      "@common/*": ["./components/common/*"],
+      "@layout/*": ["./components/layout/*"]
     }
   },
   "include": [
