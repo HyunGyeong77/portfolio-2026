@@ -2,7 +2,7 @@
 
 import {useState, useEffect} from 'react';
 
-export function MediaQuery() {
+export function useMediaQuery() {
   const [width, setWidth] = useState<number | null>(null);
 
   useEffect(() => {
