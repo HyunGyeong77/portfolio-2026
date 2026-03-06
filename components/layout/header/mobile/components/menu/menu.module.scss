@@ -6,4 +6,7 @@
   height: calc(100vh - (56px + var(--page-padding)));
   padding: 1rem;
   background-color: var(--color-background);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
