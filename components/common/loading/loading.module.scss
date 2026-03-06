@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .loading {
   position: absolute;
   top: 0;
@@ -48,6 +50,17 @@
           background: #DFB5FF;
         }
       }
+    }
+  }
+}
+
+@media (min-width: breakpoint.$desktop) {
+  .loading > .loading__inner > .loading__progressbar {
+    width: 400px;
+    height: 75px;
+
+    > .loading__progress-box {
+      padding: 12px;
     }
   }
 }
