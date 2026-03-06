@@ -4,6 +4,7 @@ import styles from './header-mobile.module.scss';
 import Hamburger from './components/hamburger/Hamburger';
 import Close from './components/close/Close';
 import {useState} from 'react';
+import Menu from './components/menu/Menu';
 
 export default function HeaderMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ export default function HeaderMobile() {
       <button className={styles["header__menu-btn"]} onClick={menuBtnClick}>
         {!isMenuOpen ? <Hamburger /> : <Close />}
       </button>
+      {isMenuOpen && <Menu />}
     </header>
   );
 }

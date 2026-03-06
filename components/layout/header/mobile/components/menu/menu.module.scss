@@ -1,0 +1,9 @@
+.menu {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - (56px + var(--page-padding)));
+  padding: 1rem;
+  background-color: var(--color-background);
+}
