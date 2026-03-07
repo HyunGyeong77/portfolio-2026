@@ -2,6 +2,7 @@ import styles from './main-menu.module.scss';
 import Image from 'next/image';
 import Background from './assets/img/background.png';
 import Title from './components/title/Title';
+import KeyButton from './components/key-button/KeyButton';
 
 export default function MainMenu() {
   return (
@@ -11,6 +12,7 @@ export default function MainMenu() {
       </div>
       <div className={styles.main__container}>
         <Title />
+        <KeyButton />
       </div>
     </div>
   );

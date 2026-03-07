@@ -27,5 +27,8 @@
 
   > .main__container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 }
