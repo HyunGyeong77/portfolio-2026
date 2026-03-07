@@ -4,7 +4,12 @@ import Stats from '@layout/header/components/stats/Stats'
 export default function Menu() {
   return (
     <div className={styles.menu}>
-      <Stats />
+      <Stats 
+        statsWidth="313px"
+        statsHeight="158px"
+        expWidth={157}
+        expHeight={19}
+      />
     </div>
   );
 }

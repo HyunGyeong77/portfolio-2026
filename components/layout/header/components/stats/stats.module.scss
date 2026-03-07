@@ -5,9 +5,8 @@
     position: absolute;
     top: 0;
     left: 141px;
-    width: 156px;
+    width: 157px;
     height: 159px;
-    background: rgba(0, 0, 0, 0.1);
     padding-top: 2.5rem;
 
     > .stats__inner {
@@ -15,6 +14,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        user-select: none;
 
         > .stats__level {
           > span {
@@ -27,6 +27,12 @@
           color: var(--color-text-dark);
           font-family: "maplestory-bold";
         }
+      }
+
+      > .stats__exp-email {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
       }
     }
   }
