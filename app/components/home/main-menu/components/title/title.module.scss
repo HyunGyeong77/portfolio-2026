@@ -1,0 +1,59 @@
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > p {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      color: var(--color-text-shadow);
+      opacity: 50%;
+    }
+
+    &:first-child {
+      font-size: 2rem;
+      &::before {
+        content: "HyunGyeong's";
+        top: 5px;
+        left: 3px;
+      }
+    }
+
+    &:nth-child(2) {
+      font-size: 4rem;
+      font-family: "maplestory-bold";
+
+      &::before {
+        content: "PortFolio";
+        top: 10px;
+        left: 4px;
+      }
+    }
+
+    > span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  > .title__sign-box {
+    position: absolute;
+    top: 2rem;
+    right: -2rem;
+    width: 100px;
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .title {
+    scale: 0.8;
+  }
+}

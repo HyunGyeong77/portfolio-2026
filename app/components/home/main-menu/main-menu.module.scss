@@ -6,6 +6,9 @@
   height: 100%;
   background: var(--color-background);
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   > .main__bg-box {
     position: absolute;
@@ -20,5 +23,9 @@
       object-fit: cover;
       height: 100%;
     }
+  }
+
+  > .main__container {
+    position: relative;
   }
 }
