@@ -4,6 +4,7 @@ import styles from './stats.module.scss';
 import StatsIcon from '@/components/layout/header/components/stats/icon/StatsIcon';
 import {createContext, useContext, useEffect, useState} from 'react';
 import StatsExp from '@/components/layout/header/components/stats/exp/StatsExp'; 
+import StatsEmail from '@layout/header/components/stats/email/StatsEmail';
 
 type Props = {
   statsWidth: string,
@@ -38,6 +39,7 @@ export default function Stats(props: Props) {
           </div>
           <div className={styles["stats__exp-email"]}>   
             <StatsExp expWidth={expWidth} expHeight={expHeight} page={page} />
+            <StatsEmail />
           </div>    
         </div>
       </div>
