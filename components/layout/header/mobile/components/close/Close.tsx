@@ -8,7 +8,7 @@ export default function Close() {
       height="56"
       viewBox="0 0 16 16" 
       xmlns="http://www.w3.org/2000/svg" 
-      shape-rendering="crispEdges"
+      shapeRendering="crispEdges"
     >
       <rect x="2" y="0" width="12" height="1" fill="#FFFFFF" />
       <rect x="1" y="1" width="2" height="1" fill="#FFFFFF" />

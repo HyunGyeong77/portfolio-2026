@@ -4,11 +4,11 @@ export default function StatsIcon({width, height}: {width: string, height: strin
   return (
     <svg 
       version="1.1" 
-      width={width}
-      height={height}
+      width={width} 
+      height={height} 
       viewBox="0 0 137 70"
       xmlns="http://www.w3.org/2000/svg" 
-      shape-rendering="crispEdges"
+      shapeRendering="crispEdges"
     >
       <rect x="3" y="0" width="128" height="2" fill="#A56FF9"/>
       <rect x="2" y="1" width="1" height="4" fill="#A56FF9"/>
@@ -38,7 +38,7 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="44" y="5" width="11" height="1" fill="#9D83C6"/>
       <rect x="55" y="5" width="1" height="1" fill="#C7A5FF"/>
       <rect x="58" y="5" width="1" height="57" fill="#C7A5FF"/>
-      <rect x="59" y="5" width="72" height="26" fill="#A56FF9"/>
+      <rect x="59" y="5" width="72" height="36" fill="#A56FF9"/>
       <rect x="135" y="5" width="1" height="63" fill="#E5D6FF" opacity="0.525490"/>
       <rect x="5" y="6" width="1" height="1" fill="#9D83C6"/>
       <rect x="6" y="6" width="49" height="1" fill="#E5D6FF"/>
@@ -467,9 +467,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="52" y="31" width="1" height="2" fill="#C338FF"/>
       <rect x="53" y="31" width="1" height="1" fill="#070408"/>
       <rect x="56" y="31" width="1" height="9" fill="#AF92DD"/>
-      <rect x="59" y="31" width="5" height="1" fill="#A56FF9"/>
-      <rect x="64" y="31" width="65" height="7" fill="#C7A5FF"/>
-      <rect x="129" y="31" width="2" height="1" fill="#A56FF9"/>
       <rect x="7" y="32" width="1" height="11" fill="#B7ABCC"/>
       <rect x="8" y="32" width="1" height="1" fill="#080704"/>
       <rect x="13" y="32" width="1" height="13" fill="#DF86FF"/>
@@ -492,10 +489,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="50" y="32" width="1" height="1" fill="#080704"/>
       <rect x="51" y="32" width="1" height="1" fill="#BA39FE"/>
       <rect x="53" y="32" width="1" height="1" fill="#040C0B"/>
-      <rect x="59" y="32" width="4" height="1" fill="#A56FF9"/>
-      <rect x="63" y="32" width="1" height="5" fill="#C7A5FF"/>
-      <rect x="129" y="32" width="1" height="5" fill="#C7A5FF"/>
-      <rect x="130" y="32" width="1" height="1" fill="#A56FF9"/>
       <rect x="8" y="33" width="1" height="3" fill="#000000"/>
       <rect x="9" y="33" width="1" height="10" fill="#DD83FF"/>
       <rect x="10" y="33" width="1" height="3" fill="#DF86FF"/>
@@ -522,9 +515,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="51" y="33" width="1" height="3" fill="#C03DFE"/>
       <rect x="52" y="33" width="1" height="1" fill="#BA39FE"/>
       <rect x="53" y="33" width="1" height="4" fill="#030604"/>
-      <rect x="59" y="33" width="3" height="34" fill="#A56FF9"/>
-      <rect x="62" y="33" width="1" height="3" fill="#C7A5FF"/>
-      <rect x="130" y="33" width="1" height="3" fill="#C7A5FF"/>
       <rect x="15" y="34" width="1" height="1" fill="#0C090A"/>
       <rect x="17" y="34" width="2" height="8" fill="#FDFDFD"/>
       <rect x="19" y="34" width="1" height="2" fill="#FBFAFB"/>
@@ -579,8 +569,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="50" y="36" width="1" height="1" fill="#020C02"/>
       <rect x="51" y="36" width="1" height="2" fill="#BA39FE"/>
       <rect x="52" y="36" width="1" height="3" fill="#C338FF"/>
-      <rect x="62" y="36" width="1" height="7" fill="#A56FF9"/>
-      <rect x="130" y="36" width="1" height="7" fill="#A56FF9"/>
       <rect x="12" y="37" width="1" height="3" fill="#DD83FF"/>
       <rect x="15" y="37" width="1" height="2" fill="#000000"/>
       <rect x="20" y="37" width="1" height="1" fill="#030604"/>
@@ -597,8 +585,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="47" y="37" width="1" height="1" fill="#FBFAFB"/>
       <rect x="50" y="37" width="1" height="1" fill="#030604"/>
       <rect x="53" y="37" width="1" height="1" fill="#040C0B"/>
-      <rect x="63" y="37" width="1" height="5" fill="#A56FF9"/>
-      <rect x="129" y="37" width="1" height="5" fill="#A56FF9"/>
       <rect x="14" y="38" width="1" height="1" fill="#E58CFF"/>
       <rect x="20" y="38" width="1" height="1" fill="#F5F0EC"/>
       <rect x="21" y="38" width="1" height="1" fill="#070408"/>
@@ -620,7 +606,6 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="50" y="38" width="1" height="1" fill="#080704"/>
       <rect x="51" y="38" width="1" height="2" fill="#C03DFE"/>
       <rect x="53" y="38" width="1" height="1" fill="#000000"/>
-      <rect x="64" y="38" width="65" height="3" fill="#A56FF9"/>
       <rect x="14" y="39" width="1" height="1" fill="#DF86FF"/>
       <rect x="15" y="39" width="1" height="1" fill="#070408"/>
       <rect x="20" y="39" width="2" height="1" fill="#FDFDFD"/>
@@ -697,7 +682,9 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="49" y="41" width="1" height="1" fill="#030604"/>
       <rect x="50" y="41" width="3" height="1" fill="#BF31F6"/>
       <rect x="53" y="41" width="1" height="1" fill="#070408"/>
+      <rect x="59" y="41" width="5" height="1" fill="#A56FF9"/>
       <rect x="64" y="41" width="65" height="18" fill="#E5D6FF"/>
+      <rect x="129" y="41" width="2" height="1" fill="#A56FF9"/>
       <rect x="4" y="42" width="1" height="4" fill="#9D83C6"/>
       <rect x="8" y="42" width="1" height="1" fill="#030604"/>
       <rect x="16" y="42" width="1" height="1" fill="#190420"/>
@@ -725,8 +712,10 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="51" y="42" width="1" height="1" fill="#C338FF"/>
       <rect x="52" y="42" width="1" height="2" fill="#080704"/>
       <rect x="53" y="42" width="1" height="11" fill="#E5D6FF"/>
+      <rect x="59" y="42" width="4" height="1" fill="#A56FF9"/>
       <rect x="63" y="42" width="1" height="16" fill="#E5D6FF"/>
       <rect x="129" y="42" width="1" height="16" fill="#E5D6FF"/>
+      <rect x="130" y="42" width="1" height="1" fill="#A56FF9"/>
       <rect x="7" y="43" width="1" height="1" fill="#CBBEE3"/>
       <rect x="8" y="43" width="1" height="1" fill="#000000"/>
       <rect x="9" y="43" width="1" height="1" fill="#E27FFF"/>
@@ -752,6 +741,7 @@ export default function StatsIcon({width, height}: {width: string, height: strin
       <rect x="49" y="43" width="1" height="1" fill="#C831FF"/>
       <rect x="50" y="43" width="1" height="3" fill="#C22BFF"/>
       <rect x="51" y="43" width="1" height="1" fill="#C03DFE"/>
+      <rect x="59" y="43" width="3" height="24" fill="#A56FF9"/>
       <rect x="62" y="43" width="1" height="14" fill="#E5D6FF"/>
       <rect x="130" y="43" width="1" height="14" fill="#E5D6FF"/>
       <rect x="7" y="44" width="1" height="6" fill="#E5D6FF"/>
