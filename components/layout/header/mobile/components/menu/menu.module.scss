@@ -7,6 +7,14 @@
   padding: 1rem;
   background-color: var(--color-background);
   display:flex;
+  flex-direction: column;
   justify-content:center;
   align-items:center;
+  gap: 2rem;
+
+  > .menu__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
