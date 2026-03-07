@@ -5,6 +5,7 @@ import Loading from '@common/loading/Loading';
 import Header from '@layout/header/Header';
 import {PageContext} from '@layout/header/components/stats/Stats';
 import {useState} from 'react';
+import TargetCursor from '@common/cursor/TargetCursor';
 
 export default function ClientComponent() {
   const [page, setPage] = useState<string>("hero");
@@ -12,6 +13,12 @@ export default function ClientComponent() {
   return (
     <div className={styles.wrap}>
       <Loading />
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor
+        parallaxOn
+        hoverDuration={0.2}
+      />
       <PageContext.Provider value={page}>
         <Header />
       </PageContext.Provider>
