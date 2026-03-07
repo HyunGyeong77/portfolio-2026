@@ -6,4 +6,19 @@
   height: 100%;
   background: var(--color-background);
   z-index: 10;
+
+  > .main__bg-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+
+    > .main__bg {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
 }
