@@ -27,7 +27,7 @@ export default function Resource(props: Props) {
       <Image src={bg.src} alt={bg.alt} width={bg.width} height={bg.height} loading="eager" unoptimized />
       <div className={styles.resource__box}>
         <p>{isLoading ? "로딩중.." : resource}</p>
-        <Link className={styles.resource__link} href={href} title={title} target="_blank">
+        <Link className={`${styles.resource__link} cursor-target`} href={href} title={title} target="_blank">
           <Image src={link.src} alt={link.alt} width={link.width} height={link.height} loading="eager" unoptimized />
         </Link>
       </div>

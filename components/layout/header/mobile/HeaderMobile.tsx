@@ -15,7 +15,7 @@ export default function HeaderMobile() {
 
   return (
     <header className={styles.header}>
-      <button className={styles["header__menu-btn"]} onClick={menuBtnClick}>
+      <button className={`${styles["header__menu-btn"]} cursor-target`} onClick={menuBtnClick}>
         {!isMenuOpen ? <Hamburger /> : <Close />}
       </button>
       {isMenuOpen && <Menu />}
