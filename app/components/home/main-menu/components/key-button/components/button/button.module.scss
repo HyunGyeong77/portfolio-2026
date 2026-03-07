@@ -1,0 +1,17 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 70px;
+
+  > .button__text-box {
+    position: absolute;
+
+    > .button__text {
+      font-size: var(--font-size-medium);
+      color: var(--color-text-light);
+    }
+  }
+}
