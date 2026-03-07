@@ -40,6 +40,8 @@ export default function StatsExp(props: Props) {
       width={expWidth} 
       height={expHeight}
       style={{userSelect: "none"}}
+      loading="eager"
+      unoptimized
     />
   );
 }
