@@ -1,0 +1,20 @@
+@use '@/styles/breakpoints' as breakpoint;
+
+.header {
+  padding: var(--header-padding);
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+
+  > .header__info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+@media (max-width: breakpoint.$desktop) {
+  .header > .header__info {
+    flex-direction: column;
+  }
+}
