@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .stats {
   position: relative;
 
@@ -36,5 +38,27 @@
       }
     }
   }
+}
 
+@media (min-width: breakpoint.$tablet) {
+  .stats {
+    > .stats__content {
+      left: 181px;
+      width: 201px;
+      height: 204px;
+      padding-top: 3.45rem;
+
+      > .stats__inner {
+        > .stats__level-job {
+          > .stats__level {
+            font-size: 1.5rem;
+
+            > span {font-size: 2rem;}
+          }
+
+          > .stats__job {font-size: 22px;}
+        }
+      }
+    }
+  }
 }

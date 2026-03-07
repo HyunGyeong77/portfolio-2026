@@ -2,6 +2,7 @@
 
 import {useMediaQuery} from '@/lib/hooks/useMediaQuery';
 import HeaderMobile from './mobile/HeaderMobile';
+import HeaderDesktop from './desktop/HeaderDesktop';
 
 export default function Header() {
   const {width, isMobile} = useMediaQuery();
@@ -10,5 +11,7 @@ export default function Header() {
 
   if(isMobile) {
     return <HeaderMobile />
+  } else {
+    return <HeaderDesktop />
   }
 }
