@@ -1,0 +1,19 @@
+.resource {
+  position: relative;
+  display: flex;
+  
+  > .resource__box {
+    position: absolute;
+    top: 7px;
+    right: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--font-size-medium);
+    user-select: none;
+
+    > .resource__link {
+      display: flex;
+    }
+  }
+}
