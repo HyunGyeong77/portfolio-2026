@@ -12,7 +12,7 @@ export default function GithubLink(props: Props) {
   const {href, title, content} = props;
 
   return (
-    <Link href={href} title={title} className={`${styles.link} cursor-target`}>
+    <Link href={href} title={title} className={`${styles.link} cursor-target`} target="_blank">
       <MenuButtonSvg />
       <div className={styles["link__content-box"]}>
         <p className={styles.link__content}>{content}</p>
