@@ -5,6 +5,7 @@ import StatsIcon from '@/components/layout/header/components/stats/icon/StatsIco
 import {createContext, useContext, useEffect, useState} from 'react';
 import StatsExp from '@/components/layout/header/components/stats/exp/StatsExp'; 
 import StatsEmail from '@layout/header/components/stats/email/StatsEmail';
+import {pageList} from '@/lib/constants/constants';
 
 type Props = {
   statsWidth: string,
@@ -25,7 +26,7 @@ export default function Stats(props: Props) {
   if(!page) return null;
 
   useEffect(() => {
-    page !== "projects" ? setLevel(1) : setLevel(2);
+    page !== pageList.projects ? setLevel(1) : setLevel(2);
   }, [page]);
 
   return (

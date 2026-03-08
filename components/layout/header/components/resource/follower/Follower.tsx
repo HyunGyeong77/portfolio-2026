@@ -2,6 +2,7 @@ import Resource from '@layout/header/components/resource/Resource';
 import FollowerSvg from '@layout/header/assets/svg/follower.svg';
 import Plus from '@layout/header/assets/svg/plus.svg';
 import {useGithubUser} from '@layout/header/hooks/useGithubUser';
+import {githubLink} from '@/lib/constants/constants';
 
 type Props = {
   bgWidth: number
@@ -28,7 +29,7 @@ export default function Follower(props: Props) {
         width: linkWidth,
         height: linkHeight
       }}
-      href="https://github.com/hyungyeong77"
+      href={githubLink.profile}
       title="팔로우 하러가기"
       resource={data?.followers}
       isLoading={isLoading}

@@ -6,11 +6,12 @@ import Header from '@layout/header/Header';
 import {PageContext} from '@layout/header/components/stats/Stats';
 import {useState, createContext} from 'react';
 import TargetCursor from '@common/cursor/TargetCursor';
+import {pageList} from '@/lib/constants/constants';
 
 export const CursorContext = createContext<(() => void) | null>(null);
 
 export default function ClientComponent() {
-  const [page, setPage] = useState<string>("hero");
+  const [page, setPage] = useState<string>(pageList.mainMenu);
   const [cursorKey, setCursorKey] = useState<number>(0);
 
   const cursorRemount = () => {

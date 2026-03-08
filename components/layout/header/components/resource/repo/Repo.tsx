@@ -2,6 +2,7 @@ import Resource from '@layout/header/components/resource/Resource';
 import Repositories from '@layout/header/assets/svg/repositories.svg';
 import Link from '@layout/header/assets/svg/link.svg';
 import {useGithubUser} from '@layout/header/hooks/useGithubUser';
+import {githubLink} from '@/lib/constants/constants';
 
 type Props = {
   bgWidth: number
@@ -28,7 +29,7 @@ export default function Repo(props: Props) {
         width: linkWidth,
         height: linkHeight
       }}
-      href="https://github.com/hyungyeong77?tab=repositories"
+      href={githubLink.repository}
       title="레포지토리 보러가기"
       resource={data?.public_repos}
       isLoading={isLoading}
