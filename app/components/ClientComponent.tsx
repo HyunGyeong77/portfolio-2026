@@ -14,7 +14,6 @@ export type PageChangeContextType = {
   mainMenuHide: (pageName: string) => void
 }
 
-export const SetPageContext = createContext<((pageName: string) => void) | null>(null);
 export const PageChangeContext = createContext<PageChangeContextType | null>(null);
 
 export default function ClientComponent() {
@@ -44,11 +43,11 @@ export default function ClientComponent() {
         hoverDuration={0.2}
       />
       <PageChangeContext value={{mainMenuHide}}>
-        {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
         <PageContext.Provider value={page}>
-          <Header />
+          {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
+            <Header />
+          <main></main>
         </PageContext.Provider>
-        <main></main>
       </PageChangeContext>
     </div>
   );
