@@ -18,11 +18,12 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: right;
 
     > .main__bg {
+      width: 100%;
+      height: auto;
       object-fit: cover;
-      height: 100%;
+      object-position:right;
       -webkit-user-drag: none;
     }
   }
@@ -32,5 +33,9 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+  }
+
+  > .main__menu {
+    position: relative;
   }
 }

@@ -4,13 +4,35 @@ import styles from './client-component.module.scss';
 import Loading from '@common/loading/Loading';
 import Header from '@layout/header/Header';
 import {PageContext} from '@layout/header/components/stats/Stats';
-import {useState} from 'react';
+import {useState, createContext, useRef} from 'react';
 import TargetCursor from '@common/cursor/TargetCursor';
 import MainMenu from './home/main-menu/MainMenu';
 import {pageList} from '@/lib/constants/constants';
+import gsap from 'gsap';
+
+export type PageChangeContextType = {
+  mainMenuHide: (pageName: string) => void
+}
+
+export const SetPageContext = createContext<((pageName: string) => void) | null>(null);
+export const PageChangeContext = createContext<PageChangeContextType | null>(null);
 
 export default function ClientComponent() {
   const [page, setPage] = useState<string>(pageList.mainMenu);
+  const mainMenuRef = useRef<HTMLDivElement | null>(null);
+  const [showMainMenu, setShowMainMenu] = useState<boolean>(true);
+
+  const mainMenuHide = (pageName: string) => {
+    gsap.to(mainMenuRef.current, {
+      opacity: 0,
+      duration: 0.8,
+      onComplete: () => {
+        setShowMainMenu(false);
+      }
+    });
+
+    setPage(pageName);
+  }
 
   return (
     <div className={styles.wrap}>
@@ -21,11 +43,13 @@ export default function ClientComponent() {
         parallaxOn
         hoverDuration={0.2}
       />
-      <MainMenu />
-      <PageContext.Provider value={page}>
-        <Header />
-      </PageContext.Provider>
-      <main></main>
+      <PageChangeContext value={{mainMenuHide}}>
+        {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
+        <PageContext.Provider value={page}>
+          <Header />
+        </PageContext.Provider>
+        <main></main>
+      </PageChangeContext>
     </div>
   );
 }
