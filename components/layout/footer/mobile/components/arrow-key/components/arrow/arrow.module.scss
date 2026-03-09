@@ -6,3 +6,9 @@
 }
 
 .prev {transform: scaleX(-1);}
+
+@media (min-width: breakpoint.$tablet) {
+  .arrow {
+    width: 86px;
+  }
+}

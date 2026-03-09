@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .more {
   position: relative;
   display: flex;
@@ -10,5 +12,11 @@
 
   > .menu-open {
     transform: rotate(180deg);
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .more > .more__button {
+    width: 86px;
   }
 }
