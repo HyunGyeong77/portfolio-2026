@@ -4,3 +4,9 @@
   align-items: center;
   gap: 2rem;
 }
+
+@media (max-width: 370px) {
+  .wrap {
+    scale: 0.8;
+  }
+}

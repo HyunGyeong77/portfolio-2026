@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .link {
   position: relative;
   width: 150px;
@@ -16,6 +18,17 @@
     > .link__content {
       color: #4F4F4F;
       font-size: var(--font-size-medium);
+    }
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .link {
+    width: clamp(150px, 19.5vw, 250px);
+    height: clamp(51px, 6.6vw, 84px);
+
+    > .link__content-box > .link__content {
+      font-size: clamp(var(--font-size-medium), 3.1vw, var(--font-size-large));
     }
   }
 }

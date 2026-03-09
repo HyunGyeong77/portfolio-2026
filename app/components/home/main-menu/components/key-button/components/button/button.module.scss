@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .button {
   position: relative;
   display: flex;
@@ -10,8 +12,19 @@
     position: absolute;
 
     > .button__text {
-      font-size: var(--font-size-medium);
+      font-size: var(--font-size-large);
       color: var(--color-text-light);
+    }
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .button {
+    width: clamp(200px, 26vw, 300px);
+    height: clamp(70px, 9.1vw, 106px);
+
+    > .button__text-box > .button__text {
+      font-size: clamp(var(--font-size-large), 4.2vw, 2.5rem);
     }
   }
 }

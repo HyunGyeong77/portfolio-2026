@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .main {
   position: absolute;
   top: 0;
@@ -37,5 +39,13 @@
 
   > .main__menu {
     position: relative;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .main {
+    > .main__container {
+      gap: clamp(4rem, 8.3vw, 8rem);
+    }
   }
 }
