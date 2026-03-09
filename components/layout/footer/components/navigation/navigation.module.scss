@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .navigation {
   position: absolute;
   bottom: 100%;
@@ -9,4 +11,13 @@
 
 .open {
   display: flex;
+}
+
+@media (min-width: breakpoint.$desktop) {
+  .navigation {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
