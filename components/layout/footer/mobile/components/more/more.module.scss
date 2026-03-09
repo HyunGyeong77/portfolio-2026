@@ -1,5 +1,13 @@
 .more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
   > .more__button {
     display: flex;
+  }
+
+  > .menu-open {
+    transform: rotate(180deg);
   }
 }
