@@ -3,6 +3,7 @@
 import styles from './client-component.module.scss';
 import Loading from '@common/loading/Loading';
 import Header from '@layout/header/Header';
+import Footer from '@layout/footer/Footer';
 import {PageContext} from '@layout/header/components/stats/Stats';
 import {useState, createContext, useRef} from 'react';
 import TargetCursor from '@common/cursor/TargetCursor';
@@ -51,8 +52,9 @@ export default function ClientComponent() {
         <CursorContext value={cursorTargetChange}>
           <PageContext.Provider value={page}>
             {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
-              <Header />
+            <Header />
             <main></main>
+            <Footer />
           </PageContext.Provider>
         </CursorContext>
       </PageChangeContext>
