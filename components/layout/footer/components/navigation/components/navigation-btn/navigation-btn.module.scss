@@ -11,5 +11,9 @@
 }
 
 @media (min-width: breakpoint.$desktop) {
+  .button {width: 5rem;}
+}
+
+@media (min-width: 1100px) {
   .button {width: 6.25rem;}
 }
