@@ -1,11 +1,11 @@
 import styles from './footer-mobile.module.scss';
-import Navigation from "./components/navigation/Navigation";
+import More from "./components/more/More";
 import ArrowKey from "./components/arrow-key/ArrowKey";
 
 export default function FooterMobile() {
   return (
     <footer className={styles.footer}>
-      <Navigation />
+      <More />
       <ArrowKey />
     </footer>
   );
