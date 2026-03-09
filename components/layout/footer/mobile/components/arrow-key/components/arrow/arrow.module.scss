@@ -1,2 +1,8 @@
-.arrow {display: flex;}
+@use '@/styles/breakpoints' as breakpoint;
+
+.arrow {
+  display: flex;
+  width: 3.5rem;
+}
+
 .prev {transform: scaleX(-1);}
