@@ -1,0 +1,10 @@
+.arrow-key {
+  display: flex;
+  gap: 1.5rem;
+
+  > button {
+    &:first-child {
+      transform: scaleX(-1);
+    }
+  }
+}
