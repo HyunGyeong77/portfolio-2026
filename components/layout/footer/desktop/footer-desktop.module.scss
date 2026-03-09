@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--footer-padding);
+  padding-bottom: 0;
+
+  > .footer__arrow-box {
+    display: flex;
+    gap: 1rem;
+  }
+}
