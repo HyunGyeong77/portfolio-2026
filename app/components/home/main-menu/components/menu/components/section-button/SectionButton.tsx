@@ -1,7 +1,7 @@
 import styles from './section-button.module.scss';
 import MenuButtonSvg from '../MenuButtonSvg';
 import {useContext} from 'react';
-import {PageContext} from '@layout/header/components/stats/Stats';
+import {CursorContext} from '@/app/components/ClientComponent';
 import {pageList} from '@/lib/constants/constants';
 
 type Props = {
@@ -11,11 +11,12 @@ type Props = {
 
 export default function SectionButton(props: Props) {
   const {content, onClick} = props;
-  const page = useContext(PageContext);
+  const cursorTarget = useContext(CursorContext);
+  if(!cursorTarget) return null;
 
   return (
     <button 
-      className={`${styles.button} ${(page === pageList.mainMenu) && "cursor-target"}`} 
+      className={`${styles.button} ${cursorTarget(pageList.mainMenu)}`} 
       onClick={onClick}
     >
       <MenuButtonSvg />

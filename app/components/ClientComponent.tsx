@@ -15,11 +15,16 @@ export type PageChangeContextType = {
 }
 
 export const PageChangeContext = createContext<PageChangeContextType | null>(null);
+export const CursorContext = createContext<((pageName: string) => false | string) | null>(null);
 
 export default function ClientComponent() {
   const [page, setPage] = useState<string>(pageList.mainMenu);
   const mainMenuRef = useRef<HTMLDivElement | null>(null);
   const [showMainMenu, setShowMainMenu] = useState<boolean>(true);
+
+  const cursorTargetChange = (pageName: string) => {
+    return (page === pageName) && "cursor-target";
+  }
 
   const mainMenuHide = (pageName: string) => {
     gsap.to(mainMenuRef.current, {
@@ -43,11 +48,13 @@ export default function ClientComponent() {
         hoverDuration={0.2}
       />
       <PageChangeContext value={{mainMenuHide}}>
-        <PageContext.Provider value={page}>
-          {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
-            <Header />
-          <main></main>
-        </PageContext.Provider>
+        <CursorContext value={cursorTargetChange}>
+          <PageContext.Provider value={page}>
+            {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
+              <Header />
+            <main></main>
+          </PageContext.Provider>
+        </CursorContext>
       </PageChangeContext>
     </div>
   );
