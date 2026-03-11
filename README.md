@@ -16,6 +16,11 @@ https://portfolio-2026-hazel.vercel.app/
 
 <br>
 
+### ✨ Figma
+https://www.figma.com/design/3xUR2OAWMkc5hnYJavVvdU/Portfolio?node-id=0-1&p=f
+
+<br>
+
 ## 🛠️기술 스택
 
 🔹 Frontend
@@ -41,6 +46,22 @@ https://portfolio-2026-hazel.vercel.app/
 
 ### 📅 1주차 (2/26 ~ 3/04)
 
-- 1️⃣ **Asset 작업 완료** | 포트폴리오 UI에 사용될 도트 스타일 에셋 제작
+- 1️⃣ **Asset 작업 완료** │ ✅ 포트폴리오 UI에 사용될 도트 스타일 에셋 제작
 
-- 1️⃣ **UI 디자인 완료** │ Figma를 활용한 데스크탑/모바일 UI 디자인 완료
+- 2️⃣ **UI 디자인 완료** │ ✅ Figma를 활용한 데스크탑/모바일 UI 디자인 완료
+
+<br>
+
+### 📅 2주차 (3/05 ~ 3/11)
+
+- 1️⃣ **Loading UI 구현 완료** │ ✅ 초기 로드 시 로딩 화면 구현
+
+- 2️⃣ **Header UI/UX 구현 완료** │ ✅ 모바일/데스크탑 반응형, 햄버거 메뉴 구현
+
+- 3️⃣ **MainMenu UI 구현 완료** │ ✅ 모바일/데스크탑 반응형 및 메뉴 창 구현 (⚠️ 일부 버튼 UX 미구현)
+
+- 4️⃣ **footer UI 구현 완료** │ ✅ 모바일/데스크탑 반응형 및 토글 메뉴 창 구현 (⚠️ 일부 버튼 UX 미구현)
+
+- 5️⃣ **About UI 구현 완료** │ ✅ 모바일/데스크탑 반응형 구현
+
+- 6️⃣ **Skills UI 구현 완료** │ ✅ 모바일/데스크탑 반응형 구현
