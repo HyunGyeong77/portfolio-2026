@@ -9,6 +9,7 @@ import {useState, createContext, useRef} from 'react';
 import TargetCursor from '@common/cursor/TargetCursor';
 import MainMenu from './home/main-menu/MainMenu';
 import About from './home/about/About';
+import Skills from './home/skills/Skills';
 import {pageList} from '@/lib/constants/constants';
 import gsap from 'gsap';
 
@@ -56,6 +57,7 @@ export default function ClientComponent() {
             <Header />
             <main className={styles.wrap__main}>
               {(page === pageList.about) && <About />}
+              {(page === pageList.skills) && <Skills />}
             </main>
             <Footer />
           </PageContext.Provider>
