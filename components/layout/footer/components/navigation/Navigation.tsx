@@ -13,7 +13,8 @@ export default function Navigation(props: Props) {
   const {isMenuOpen} = props;
  
   return (
-    <ul className={`${styles.navigation} ${isMenuOpen && styles.open}`}>
+    <ul className={`${styles.navigation} ${isMenuOpen && styles.open}`}
+      aria-hidden={isMenuOpen}>
       <li><NavigationBtn icon={<MainSvg />} /></li>
       <li><NavigationBtn icon={<AboutSvg />} /></li>
       <li><NavigationBtn icon={<SkillsSvg />} /></li>
