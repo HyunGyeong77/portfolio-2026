@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .wrap {
   padding: var(--page-padding);
   height: 100dvh;
@@ -9,5 +11,13 @@
     height: 100%;
     padding: var(--section-padding);
     overflow: hidden;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .wrap {
+    > .wrap__main {
+      padding-block: 0;
+    }
   }
 }
