@@ -5,10 +5,11 @@ import Stats from '@layout/header/components/stats/Stats';
 import Repo from '@layout/header/components/resource/repo/Repo';
 import Follower from '@layout/header/components/resource/follower/Follower';
 
-export default function Menu() {
+export default function Menu({isMenuOpen}: {isMenuOpen: boolean}) {
 
   return (
-    <div className={styles.menu}>
+    <div className={`${styles.menu} ${isMenuOpen && styles["menu-open"]}`}
+      aria-hidden={isMenuOpen}>
       <Stats 
         statsWidth="313px"
         statsHeight="158px"

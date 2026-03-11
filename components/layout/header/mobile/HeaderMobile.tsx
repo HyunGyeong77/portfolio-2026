@@ -18,7 +18,7 @@ export default function HeaderMobile() {
       <button className={`${styles["header__menu-btn"]} cursor-target`} onClick={menuBtnClick}>
         {!isMenuOpen ? <Hamburger /> : <Close />}
       </button>
-      {isMenuOpen && <Menu />}
+      <Menu isMenuOpen={isMenuOpen} />
     </header>
   );
 }
