@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .content__wrap {
   height: 100%;
   overflow: auto;
@@ -10,5 +12,11 @@
   &::-webkit-scrollbar-thumb {
     background: #cacaca23;
     border-radius: 50px;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .content__wrap {
+    display: flex;
   }
 }
