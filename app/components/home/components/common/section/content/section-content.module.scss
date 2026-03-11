@@ -1,0 +1,14 @@
+.content__wrap {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #cacaca23;
+    border-radius: 50px;
+  }
+}
