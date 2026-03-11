@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .content__wrap {
   display: flex;
   flex-direction: column;
@@ -8,5 +10,17 @@
     font-size: var(--font-size-medium);
     word-break: keep-all;
     line-height: 30px;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .content__wrap {
+    margin: auto;
+
+    > p {
+      font-size: 38px;
+      line-height: 2.5rem;
+      text-align: center;
+    }
   }
 }
