@@ -8,6 +8,7 @@ import {PageContext} from '@layout/header/components/stats/Stats';
 import {useState, createContext, useRef} from 'react';
 import TargetCursor from '@common/cursor/TargetCursor';
 import MainMenu from './home/main-menu/MainMenu';
+import About from './home/about/About';
 import {pageList} from '@/lib/constants/constants';
 import gsap from 'gsap';
 
@@ -53,7 +54,9 @@ export default function ClientComponent() {
           <PageContext.Provider value={page}>
             {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
             <Header />
-            <main></main>
+            <main className={styles.wrap__main}>
+              {(page === pageList.about) && <About />}
+            </main>
             <Footer />
           </PageContext.Provider>
         </CursorContext>
