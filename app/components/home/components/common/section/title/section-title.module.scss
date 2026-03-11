@@ -1,0 +1,10 @@
+.title__wrap {
+  padding-block: 1rem;
+  border-bottom: 2px solid var(--color-represent);
+
+  > .title {
+    font-size: 2.5rem;
+    font-family: 'maplestory-bold';
+    color: var(--color-represent);
+  }
+}
