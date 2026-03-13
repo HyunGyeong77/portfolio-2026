@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./*"],
       "@common/*": ["./components/common/*"],
-      "@layout/*": ["./components/layout/*"]
+      "@layout/*": ["./components/layout/*"],
+      "@home-projects/*": ["./app/components/home/projects/*"],
     }
   },
   "include": [
