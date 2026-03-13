@@ -18,22 +18,4 @@
   > span {
     white-space: nowrap;
   }
-
-  > .slides__describe-box {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    
-    > span { 
-      text-align: right;
-      font-size: 12px;
-      word-break: keep-all;
-    }
-  }
-}
-
-.slides__none-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

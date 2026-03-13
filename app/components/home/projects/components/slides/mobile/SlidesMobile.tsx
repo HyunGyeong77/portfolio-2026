@@ -4,6 +4,8 @@ import {Swiper as SwiperClass} from 'swiper';
 import {Mousewheel, Keyboard} from 'swiper/modules';
 import Card from '../../card/Card';
 import {CardType} from '../../../type/card-type';
+import SlideDescribe from '../components/slide-describe/SlideDescribe';
+import SlideNone from '../components/slide-none/SlideNone';
 import {useState, useEffect, useRef, useMemo} from 'react';
 import Scroll from './components/Scroll';
 import "swiper/css";
@@ -109,14 +111,9 @@ export default function SlidesMobile(props: Props) {
           <span>
             {!isSwiper ? progress : activeIndex + 1} / {Object.keys(curSlide).length}
           </span>
-          <div className={styles["slides__describe-box"]}>
-            <span>PC : 마우스 휠 또는 키보드 (↑위, ↓아래)</span>
-            <span>모바일 : 손가락으로 위/아래 드래그</span>
-          </div>
+          <SlideDescribe />
         </div> :
-        <div className={styles["slides__none-box"]}>
-          <span>활동한 기록이 없습니다.</span>
-        </div>
+        <SlideNone />
       }
     </>
   );
