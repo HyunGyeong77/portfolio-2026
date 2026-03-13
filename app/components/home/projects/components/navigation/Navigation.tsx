@@ -1,5 +1,5 @@
 import {useMediaQuery} from "@/lib/hooks/useMediaQuery";
-import NavigationMobile from "./mobile/navigationMobile";
+import NavigationMobile from "./mobile/NavigationMobile";
 
 export default function Navigation() {
   const {width, isMobile} = useMediaQuery();
