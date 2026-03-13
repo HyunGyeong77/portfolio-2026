@@ -56,7 +56,13 @@
           margin-bottom: 1rem;
   
           > .card__describe {
+            display: -webkit-box;
             font-size: 18px;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
           }
         }
   
