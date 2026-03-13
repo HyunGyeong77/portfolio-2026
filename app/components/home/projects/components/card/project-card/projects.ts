@@ -3,10 +3,10 @@ import {githubShortcut} from "../utils/github-url";
 import {CardType} from "../../../type/card-type";
 
 // Image
-import Petgo from './assets/png/petgo.png';
-import Hodadoc from './assets/png/hodadoc.png';
-import Jwimovie from './assets/png/jwimovie.png';
-import Sweat from './assets/png/sweat.png';
+import Petgo from './assets/img/petgo.png';
+import Hodadoc from './assets/img/hodadoc.png';
+import Jwimovie from './assets/img/jwimovie.png';
+import Sweat from './assets/img/sweat.png';
 
 const {next, react, scss, ts, postgres, python} = skill;
 const {responsive, interactive, fixed} = tag;
