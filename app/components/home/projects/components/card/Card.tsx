@@ -13,7 +13,7 @@ export default function Card(props: CardType) {
         src={bg} 
         alt={`${title} image`} 
         fill
-        priority={true}
+        loading="eager"
       />
       <div className={styles.card__screen}></div>
       <div className={styles["card__inner"]}>
