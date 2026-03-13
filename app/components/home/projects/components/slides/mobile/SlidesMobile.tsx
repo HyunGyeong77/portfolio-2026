@@ -4,7 +4,7 @@ import {Swiper as SwiperClass} from 'swiper';
 import {Mousewheel, Keyboard} from 'swiper/modules';
 import Card from '../../card/Card';
 import {CardType} from '../../../type/card-type';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef, useMemo} from 'react';
 import Scroll from './components/Scroll';
 import "swiper/css";
 
@@ -21,6 +21,8 @@ export default function SlidesMobile(props: Props) {
   // swiper
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const swiperRef = useRef<SwiperClass>(null);
+  const slides = useMemo(() => Object.values(curSlide), [curSlide]);
+  const noneSlide = slides.length === 0;
 
   // height 768px를 기준으로 boolean 값 결정
   const [isSwiper, setIsSwiper] = useState<boolean>(false);
@@ -53,7 +55,7 @@ export default function SlidesMobile(props: Props) {
         <Scroll curSlide={curSlide} setProgress={setProgress} />
       ) : (
         <Swiper
-          key="vertical"
+          key={JSON.stringify(curSlide)}
           className={styles.slides__swiper}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -65,7 +67,7 @@ export default function SlidesMobile(props: Props) {
               const aTags: NodeList = slide.querySelectorAll("a");
               const aTagsArr: Node[] = [...aTags];
               
-              const isActive = slide.className.includes("active");
+              const isActive = slide.classList.contains("swiper-slide-active");
               aTagsArr.forEach((atag) => {
                 if(!(atag instanceof HTMLAnchorElement)) return;
 
@@ -79,11 +81,11 @@ export default function SlidesMobile(props: Props) {
           mousewheel={true}
           slidesPerView="auto"
           centeredSlides={true}
-          loop={true}
+          loop={slides.length >= 2}
           keyboard={true}
           simulateTouch={false}
         >
-          {Object.values(curSlide).map((project, index) => {
+          {slides.map((project, index) => {
             const {title, describe, skills, tags, githubUrl, visitUrl, bg} = project;
 
             return (
@@ -102,11 +104,20 @@ export default function SlidesMobile(props: Props) {
           })}
         </Swiper>
       )}
-      <div className={styles["slides__pagination-box"]}>
-        <span>
-          {!isSwiper ? progress : activeIndex + 1} / {Object.keys(curSlide).length}
-        </span>
-      </div>
+      {!noneSlide ?
+        <div className={styles["slides__pagination-box"]}>
+          <span>
+            {!isSwiper ? progress : activeIndex + 1} / {Object.keys(curSlide).length}
+          </span>
+          <div className={styles["slides__describe-box"]}>
+            <span>PC : 마우스 휠 또는 키보드 (↑위, ↓아래)</span>
+            <span>모바일 : 손가락으로 위/아래 드래그</span>
+          </div>
+        </div> :
+        <div className={styles["slides__none-box"]}>
+          <span>활동한 기록이 없습니다.</span>
+        </div>
+      }
     </>
   );
 }
