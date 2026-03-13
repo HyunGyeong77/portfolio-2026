@@ -102,3 +102,44 @@
     }
   }
 }
+
+@media (max-width: 350px) {
+  .card__wrap {
+    > .card__inner {
+      > .card__title-box {
+        > .card__title {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      > .card__content-box {
+        > .card__content-inner {
+          > .card__skills-box,
+          > .card__tags-box {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding-bottom: 0.3rem;
+
+            &::-webkit-scrollbar {
+              height: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: #d8d8d8;
+              border-radius: 50px;
+            }
+          }
+
+          > .card__tags-box {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
