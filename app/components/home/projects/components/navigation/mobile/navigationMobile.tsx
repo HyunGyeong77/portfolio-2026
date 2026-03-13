@@ -4,6 +4,7 @@ import SlideMenuIcon from './assets/img/slide-menu-icon.png';
 import {useContext, useState, useEffect} from 'react';
 import {PageContext} from '@/components/layout/header/components/stats/Stats';
 import {pageList} from '@/lib/constants/constants';
+import NavigationMenu from '../components/navigation-menu/NavigationMenu';
 import clsx from 'clsx';
 
 export default function NavigationMobile() {
@@ -27,17 +28,22 @@ export default function NavigationMobile() {
   }, [isMenuOpen]);
 
   return (
-    <div className={styles.navigation__wrap}>
+    <div className={clsx(
+      styles.navigation__wrap,
+      isMenuOpen && styles["menu-open"]
+    )}>
       <button 
         className={clsx(
           styles.navigation__toggle,
-          (page === pageList.projects) && "cursor-target",
-          isMenuOpen && styles["menu-open"]
+          (page === pageList.projects) && "cursor-target"
         )}
         onClick={toggleButtonClick}
+        aria-haspopup={true}
+        aria-expanded={isMenuOpen}
       >
         <Image src={SlideMenuIcon} alt="menu icon" width={24} height={12} /> 
       </button>
+      {isMenuOpen && <NavigationMenu />}
     </div>
   );
 }
