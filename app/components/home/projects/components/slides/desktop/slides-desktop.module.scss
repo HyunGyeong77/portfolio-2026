@@ -1,0 +1,23 @@
+.slides__swiper {
+  width: 100%;
+  height: 100%;
+  
+  > div { // swiper-wrapper
+    > div { // swiper-slide
+      width: max-content;
+    }
+  }
+}
+
+.slides__pagination-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 387px;
+  margin: 0 auto;
+  padding-inline: 1rem;
+
+  > .slides__pagination {
+    
+  }
+}
