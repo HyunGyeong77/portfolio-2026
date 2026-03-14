@@ -105,6 +105,33 @@
   }
 }
 
+@media (min-width: breakpoint.$tablet) {
+  .card__wrap {
+    width: 387px;
+    height: 100%;
+    min-height: 320px;
+
+    > .card__inner {
+      > .card__content-box {
+        > .card__content-inner {
+          > .card__describe-box,
+          > .card__skills-box {
+            height: 3.75rem;
+          }
+
+          > .card__describe-box {
+            margin-bottom: 0;
+          }
+
+          > .card__tags-box {
+            height: 41px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 350px) {
   .card__wrap {
     > .card__inner {
