@@ -111,7 +111,10 @@ export default function SlidesMobile(props: Props) {
           <span>
             {!isSwiper ? progress : activeIndex + 1} / {Object.keys(curSlide).length}
           </span>
-          <SlideDescribe />
+          <SlideDescribe
+            topDescribe="PC : 마우스 휠 또는 키보드 (↑위, ↓아래)"
+            btmDescribe="모바일 / 태블릿 : 손가락으로 위, 아래 드래그"
+          />
         </div> :
         <SlideNone />
       }

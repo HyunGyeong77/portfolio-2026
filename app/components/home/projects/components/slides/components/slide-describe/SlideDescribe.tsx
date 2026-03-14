@@ -1,10 +1,17 @@
 import styles from './slide-describe.module.scss';
 
-export default function SlideDescribe() {
+type Props = {
+  topDescribe: string
+  btmDescribe: string
+}
+
+export default function SlideDescribe(props: Props) {
+  const {topDescribe, btmDescribe} = props;
+
   return (
     <div className={styles["describe__wrap"]}>
-      <span>PC : 마우스 휠 또는 키보드 (↑위, ↓아래)</span>
-      <span>모바일 : 손가락으로 위/아래 드래그</span>
+      <span>{topDescribe}</span>
+      <span>{btmDescribe}</span>
     </div>
   );
 }
