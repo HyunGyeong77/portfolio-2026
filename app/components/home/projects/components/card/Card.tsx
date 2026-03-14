@@ -13,6 +13,7 @@ export default function Card(props: CardType) {
         src={bg} 
         alt={`${title} image`} 
         fill
+        sizes="(max-width: 768px) 100vw, 33vw"
         loading="eager"
       />
       <div className={styles.card__screen}></div>
