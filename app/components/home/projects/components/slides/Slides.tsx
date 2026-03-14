@@ -2,6 +2,7 @@ import styles from './slides.module.scss';
 import Navigation from '../navigation/Navigation';
 import {useMediaQuery} from '@/lib/hooks/useMediaQuery';
 import SlidesMobile from './mobile/SlidesMobile';
+import SlidesDesktop from './desktop/SlidesDesktop';
 import {useState, createContext, useEffect} from 'react';
 import {CardType} from '../../type/card-type';
 import {projects} from '../card/project-card/projects';
@@ -40,7 +41,10 @@ export default function Slides() {
       <CurSlideContext.Provider value={{curSlideTxt, setCurSlideTxt}}>
         <Navigation />
       </CurSlideContext.Provider>
-      {isMobile && <SlidesMobile curSlide={curSlide} />}
+      {isMobile ? 
+        <SlidesMobile curSlide={curSlide} /> :
+        <SlidesDesktop curSlide={curSlide} />
+      }
     </div>
   );
 }
