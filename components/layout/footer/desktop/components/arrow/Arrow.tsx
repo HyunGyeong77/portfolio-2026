@@ -1,5 +1,5 @@
 import styles from './arrow.module.scss';
-import ButtonWrapper from './assets/svg/button-wrapper.svg';
+import ButtonWrapper from '@layout/assets/svg/button-wrapper.svg';
 import Image from 'next/image';
 import {useContext} from 'react';
 import {PageContext} from '@/components/layout/header/components/stats/Stats';
