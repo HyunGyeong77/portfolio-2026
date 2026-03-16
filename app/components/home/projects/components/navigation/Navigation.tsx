@@ -1,5 +1,5 @@
 import {useMediaQuery} from "@/lib/hooks/useMediaQuery";
-import NavigationMobile from "./mobile/NavigationMobile";
+import NavigationMobile from "./mobile/navigationMobile";
 import NavigationDesktop from "./desktop/NavigationDesktop";
 
 export default function Navigation() {
