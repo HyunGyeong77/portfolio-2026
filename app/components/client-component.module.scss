@@ -9,7 +9,7 @@
 
   > .wrap__main {
     height: 100%;
-    padding: var(--section-padding);
+    padding-block: var(--section-padding);
     overflow: hidden;
   }
 }
@@ -18,6 +18,7 @@
   .wrap {
     > .wrap__main {
       padding-block: 0;
+      padding-inline: var(--section-padding);
     }
   }
 }
