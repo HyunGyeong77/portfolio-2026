@@ -6,12 +6,12 @@ import HeaderDesktop from './desktop/HeaderDesktop';
 
 export default function Header() {
   const {width, isMobile} = useMediaQuery();
-
   if(width === null) return null;
 
-  if(isMobile) {
-    return <HeaderMobile />
-  } else {
-    return <HeaderDesktop />
-  }
+  return (
+    <>
+      <HeaderMobile isMobile={isMobile} />
+      <HeaderDesktop isMobile={isMobile} />
+    </>
+  );
 }

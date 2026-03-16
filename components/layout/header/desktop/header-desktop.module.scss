@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
 
+  &.hide {display: none;}
+
   > .header__info {
     display: flex;
     flex-direction: row;

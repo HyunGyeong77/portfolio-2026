@@ -5,8 +5,9 @@ import Hamburger from './components/hamburger/Hamburger';
 import Close from './components/close/Close';
 import {useState} from 'react';
 import Menu from './components/menu/Menu';
+import clsx from 'clsx';
 
-export default function HeaderMobile() {
+export default function HeaderMobile({isMobile}: {isMobile: boolean}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuBtnClick = () => {
@@ -14,7 +15,10 @@ export default function HeaderMobile() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={clsx(
+      styles.header,
+      !isMobile && styles.hide
+    )}>
       <button className={`${styles["header__menu-btn"]} cursor-target`} onClick={menuBtnClick}>
         {!isMenuOpen ? <Hamburger /> : <Close />}
       </button>
