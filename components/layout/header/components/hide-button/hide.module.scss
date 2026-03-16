@@ -1,0 +1,34 @@
+@use '@/styles/breakpoints' as breakpoint;
+
+.hide__button {
+  position: absolute;
+  left: 0;
+  color: var(--color-text-dark);
+  display: flex;
+  height: max-content;
+  border-radius: 5px;
+  pointer-events: auto;
+
+  > img {
+    width: auto;
+    height: 48px;
+  }
+
+  > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+  }
+}
+
+@media (max-height: breakpoint.$max-height-730) {
+  .hide__button {
+    left: 1rem;
+  }
+}

@@ -3,6 +3,8 @@
 .arrow-key {
   display: flex;
   gap: 1.5rem;
+
+  &.hide {display: none;}
 }
 
 @media (max-height: breakpoint.$max-height-730) or

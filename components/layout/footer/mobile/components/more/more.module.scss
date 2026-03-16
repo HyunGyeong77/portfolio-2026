@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
 
+  &.hide {display: none;}
+
   > .more__button {
     display: flex;
     width: 3.5rem;

@@ -4,8 +4,17 @@
   position: relative;
   display: flex;
   justify-content: right;
+  min-width: 200px;
 
-  &.hide {display: none;}
+  &.hidden {display: none;}
+
+  &.hide {
+    min-height: 3.5rem;
+
+    > .header__menu-btn {
+      display: none;
+    }
+  }
 
   > .header__menu-btn {
     display: flex;
@@ -24,8 +33,13 @@
     overflow: auto;
     pointer-events: none;
 
+    &.hide {
+      height: 5.5rem;
+    }
+
     &.menu-open {
       background: var(--color-background);
+      pointer-events: auto;
     }
 
     > .header__menu-btn {

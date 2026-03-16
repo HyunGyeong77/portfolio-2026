@@ -12,6 +12,7 @@ import About from './home/about/About';
 import Skills from './home/skills/Skills';
 import Projects from './home/projects/Projects';
 import {pageList} from '@/lib/constants/constants';
+import {UiHideContext} from '@/components/layout/header/components/hide-button/Hide';
 import gsap from 'gsap';
 
 export type PageChangeContextType = {
@@ -25,6 +26,7 @@ export default function ClientComponent() {
   const [page, setPage] = useState<string>(pageList.mainMenu);
   const mainMenuRef = useRef<HTMLDivElement | null>(null);
   const [showMainMenu, setShowMainMenu] = useState<boolean>(true);
+  const [uiHide, setUiHide] = useState<boolean>(false);
 
   const cursorTargetChange = (pageName: string) => {
     return (page === pageName) && "cursor-target";
@@ -55,13 +57,15 @@ export default function ClientComponent() {
         <CursorContext value={cursorTargetChange}>
           <PageContext.Provider value={page}>
             {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
-            <Header />
-            <main className={styles.wrap__main}>
-              {(page === pageList.about) && <About />}
-              {(page === pageList.skills) && <Skills />}
-              {(page === pageList.projects) && <Projects />}
-            </main>
-            <Footer />
+            <UiHideContext.Provider value={{uiHide, setUiHide}}>
+              <Header />
+              <main className={styles.wrap__main}>
+                {(page === pageList.about) && <About />}
+                {(page === pageList.skills) && <Skills />}
+                {(page === pageList.projects) && <Projects />}
+              </main>
+              <Footer />
+            </UiHideContext.Provider>
           </PageContext.Provider>
         </CursorContext>
       </PageChangeContext>
