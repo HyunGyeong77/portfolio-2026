@@ -24,7 +24,7 @@
 }
 
 @media (max-height: breakpoint.$max-height-730) or
-((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920)) {
+((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-950)) {
   .more {
     > .more__button {
       pointer-events: auto;
