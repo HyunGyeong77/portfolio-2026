@@ -62,3 +62,9 @@
     }
   }
 }
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .stats {
+    pointer-events: auto;
+  }
+}

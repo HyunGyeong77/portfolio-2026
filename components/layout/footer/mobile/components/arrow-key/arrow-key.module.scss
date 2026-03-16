@@ -1,4 +1,13 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .arrow-key {
   display: flex;
   gap: 1.5rem;
+}
+
+@media (max-height: breakpoint.$max-height-730) or
+((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920)) {
+  .arrow-key {
+    pointer-events: auto;
+  }
 }

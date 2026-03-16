@@ -22,6 +22,7 @@
     bottom: 0;
     padding: var(--footer-padding);
     z-index: 4;
+    pointer-events: none;
   }
 }
 
@@ -33,6 +34,7 @@
     bottom: 0;
     padding: 2rem;
     z-index: 4;
+    pointer-events: none;
   }
 }
 

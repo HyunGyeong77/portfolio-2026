@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .resource {
   position: relative;
   display: flex;
@@ -15,5 +17,11 @@
     > .resource__link {
       display: flex;
     }
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .resource {
+    pointer-events: auto;
   }
 }

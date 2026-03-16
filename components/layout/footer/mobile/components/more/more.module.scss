@@ -20,3 +20,12 @@
     width: 86px;
   }
 }
+
+@media (max-height: breakpoint.$max-height-730) or
+((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920)) {
+  .more {
+    > .more__button {
+      pointer-events: auto;
+    }
+  }
+}
