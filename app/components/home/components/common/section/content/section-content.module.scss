@@ -21,7 +21,8 @@
   }
 }
 
-@media (max-height: breakpoint.$max-height-730) {
+@media (max-height: breakpoint.$max-height-730) or
+((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920)) {
   .content__wrap {
     overflow: visible;
   }

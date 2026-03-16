@@ -29,6 +29,26 @@
 
     > .wrap__main {
       overflow: visible;
+      margin-top: 3.5rem;
+    }
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .wrap {
+    height: auto;
+
+    > .wrap__main {
+      overflow: visible;
+      margin-top: 224px;
+    }
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-440) {
+  .wrap {
+    > .wrap__main {
+      margin-top: 0;
     }
   }
 }

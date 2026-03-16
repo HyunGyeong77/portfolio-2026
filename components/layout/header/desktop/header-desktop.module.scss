@@ -20,3 +20,23 @@
     flex-direction: column;
   }
 }
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    padding-bottom: 0;
+    width: 100%;
+    z-index: 4;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-440) {
+  .header {
+    position: static;
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+}

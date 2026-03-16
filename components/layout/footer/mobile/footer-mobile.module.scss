@@ -25,7 +25,19 @@
   }
 }
 
-@media (max-height: breakpoint.$max-height-160) {
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 2rem;
+    z-index: 4;
+  }
+}
+
+@media (max-height: breakpoint.$max-height-160) or 
+((min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-440)) {
   .footer {
     position: static;
     padding: 0;

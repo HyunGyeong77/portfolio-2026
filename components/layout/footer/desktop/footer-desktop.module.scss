@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -10,5 +12,24 @@
   > .footer__arrow-box {
     display: flex;
     gap: 1rem;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 4;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-440) {
+  .footer {
+    position: static;
+    padding: 1rem;
+    padding-bottom: 0;
   }
 }
