@@ -5,6 +5,8 @@
   padding: var(--footer-padding);
   padding-bottom: 0;
 
+  &.hide {display: none;}
+
   > .footer__arrow-box {
     display: flex;
     gap: 1rem;

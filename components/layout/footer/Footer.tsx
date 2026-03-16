@@ -3,13 +3,13 @@ import FooterMobile from "./mobile/FooterMobile";
 import FooterDesktop from "./desktop/FooterDesktop";
 
 export default function Footer() {
-  const {width, isMobile, isTablet} = useMediaQuery();
-
+  const {width, isDesktop} = useMediaQuery();
   if(width === null) return null;
 
-  if(isMobile || isTablet) {
-    return <FooterMobile />
-  } else {
-    return <FooterDesktop />
-  }
+  return (
+    <>
+      <FooterMobile isDesktop={isDesktop} />
+      <FooterDesktop isDesktop={isDesktop} />
+    </>
+  );
 }
