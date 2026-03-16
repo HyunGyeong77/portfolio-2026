@@ -34,6 +34,10 @@
   }
 }
 
+@media (max-height: breakpoint.$max-height-160) {
+  .wrap > .wrap__main {margin-top: 0;}
+}
+
 @media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-920) {
   .wrap {
     height: auto;
