@@ -8,6 +8,10 @@
   gap: 0.5rem;
   display: none;
   z-index: 3;
+
+  &.hide {
+    display: none;
+  }
 }
 
 .open {

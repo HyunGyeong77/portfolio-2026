@@ -44,7 +44,11 @@
 
     > .wrap__main {
       overflow: visible;
-      margin-top: 224px;
+      margin-top: 220px;
+
+      &.hide {
+        margin-top: 4rem;
+      }
     }
   }
 }
@@ -53,6 +57,8 @@
   .wrap {
     > .wrap__main {
       margin-top: 0;
+
+      &.hide {margin-top: 0;}
     }
   }
 }

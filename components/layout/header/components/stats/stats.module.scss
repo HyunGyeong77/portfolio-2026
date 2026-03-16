@@ -2,6 +2,11 @@
 
 .stats {
   position: relative;
+  display: flex;
+  
+  &.hide {
+    display: none;
+  }
 
   > .stats__content {
     position: absolute;

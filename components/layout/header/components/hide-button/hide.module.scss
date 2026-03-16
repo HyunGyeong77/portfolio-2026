@@ -27,8 +27,22 @@
   }
 }
 
+@media (min-width: breakpoint.$tablet) {
+  .hide__button {
+    position: relative;
+    width: max-content;
+    margin-left: auto; 
+  }
+}
+
 @media (max-height: breakpoint.$max-height-730) {
   .hide__button {
     left: 1rem;
+  }
+}
+
+@media (min-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-730) {
+  .hide__button {
+    left: 0;
   }
 }

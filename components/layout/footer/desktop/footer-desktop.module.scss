@@ -7,7 +7,8 @@
   padding: var(--footer-padding);
   padding-bottom: 0;
 
-  &.hide {display: none;}
+  &.hidden,
+  &.hide > .footer__arrow-box {display: none;}
 
   > .footer__arrow-box {
     display: flex;

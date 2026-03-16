@@ -30,11 +30,13 @@
     z-index: 5;
     padding: var(--header-padding);
     flex-direction:column;
-    overflow: auto;
+    overflow: visible;
     pointer-events: none;
 
     &.hide {
-      height: 5.5rem;
+      padding-bottom: 0;
+      height: 3.5rem;
+      min-height: 3.5rem;
     }
 
     &.menu-open {

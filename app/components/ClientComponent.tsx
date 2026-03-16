@@ -13,6 +13,7 @@ import Skills from './home/skills/Skills';
 import Projects from './home/projects/Projects';
 import {pageList} from '@/lib/constants/constants';
 import {UiHideContext} from '@/components/layout/header/components/hide-button/Hide';
+import clsx from 'clsx';
 import gsap from 'gsap';
 
 export type PageChangeContextType = {
@@ -59,7 +60,10 @@ export default function ClientComponent() {
             {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
             <UiHideContext.Provider value={{uiHide, setUiHide}}>
               <Header />
-              <main className={styles.wrap__main}>
+              <main className={clsx(
+                styles.wrap__main,
+                uiHide && styles.hide
+              )}>
                 {(page === pageList.about) && <About />}
                 {(page === pageList.skills) && <Skills />}
                 {(page === pageList.projects) && <Projects />}

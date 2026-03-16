@@ -6,6 +6,8 @@ import {createContext, useContext, useEffect, useState} from 'react';
 import StatsExp from '@/components/layout/header/components/stats/exp/StatsExp'; 
 import StatsEmail from '@layout/header/components/stats/email/StatsEmail';
 import {pageList} from '@/lib/constants/constants';
+import {UiHideContext} from '../hide-button/Hide';
+import clsx from 'clsx';
 
 type Props = {
   statsWidth: string,
@@ -18,6 +20,7 @@ export const PageContext = createContext<string | null>(null);
 
 export default function Stats(props: Props) {
   const {statsWidth, statsHeight, expWidth, expHeight} = props;
+  const uiHideContext = useContext(UiHideContext);
 
   // 스텟 정보 레벨 표시
   const [level, setLevel] = useState(1);
@@ -30,7 +33,10 @@ export default function Stats(props: Props) {
   }, [page]);
 
   return (
-    <div className={styles.stats}>
+    <div className={clsx(
+      styles.stats,
+      uiHideContext?.uiHide && styles.hide
+    )}>
       <StatsIcon width={statsWidth} height={statsHeight} />
       <div className={styles.stats__content}>
         <div className={styles.stats__inner}>
