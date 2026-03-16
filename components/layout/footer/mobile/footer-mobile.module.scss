@@ -1,6 +1,13 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: var(--footer-padding);
   padding-bottom: 0;
+}
+
+@media (min-width: breakpoint.$tablet) {
+  .footer {
+    padding: var(--footer-padding);
+  }
 }
