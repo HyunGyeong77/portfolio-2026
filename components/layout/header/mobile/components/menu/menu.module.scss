@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .menu {
   position: absolute;
   top: 56px;
@@ -12,6 +14,7 @@
   align-items:center;
   gap: 2rem;
   z-index: 5;
+  min-width: 350px;
 
   > .menu__info {
     display: flex;
@@ -22,4 +25,11 @@
 
 .menu-open {
   display: flex;
+}
+
+@media (max-height: breakpoint.$max-height-730) {
+  .menu {
+    position: relative;
+    top: 0;
+  }
 }

@@ -20,3 +20,9 @@
     display: flex;
   }
 }
+
+@media (max-height: breakpoint.$max-height-730) {
+  .content__wrap {
+    overflow: visible;
+  }
+}

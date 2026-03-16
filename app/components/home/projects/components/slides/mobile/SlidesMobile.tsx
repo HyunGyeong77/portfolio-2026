@@ -26,12 +26,12 @@ export default function SlidesMobile(props: Props) {
   const slides = useMemo(() => Object.values(curSlide), [curSlide]);
   const noneSlide = slides.length === 0;
 
-  // height 768px를 기준으로 boolean 값 결정
+  // height 730px를 기준으로 boolean 값 결정
   const [isSwiper, setIsSwiper] = useState<boolean>(false);
   
   useEffect(() => {
     const handleResize = () => {
-      setIsSwiper(innerHeight < 768 ? false : true);
+      setIsSwiper(innerHeight <= 730 ? false : true);
 
       if(swiperRef.current) {
         swiperRef.current.update();
@@ -107,6 +107,7 @@ export default function SlidesMobile(props: Props) {
         </Swiper>
       )}
       {!noneSlide ?
+        isSwiper &&
         <div className={styles["slides__pagination-box"]}>
           <span>
             {!isSwiper ? progress : activeIndex + 1} / {Object.keys(curSlide).length}

@@ -1,3 +1,5 @@
+@use '@/styles/breakpoints' as breakpoint;
+
 .header {
   position: relative;
   display: flex;
@@ -7,5 +9,35 @@
 
   > .header__menu-btn {
     display: flex;
+  }
+}
+
+@media (max-height: breakpoint.$max-height-730) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    padding: var(--header-padding);
+    flex-direction:column;
+    overflow: auto;
+
+    &.menu-open {
+      background: var(--color-background);
+    }
+
+    > .header__menu-btn {
+      position: relative;
+      margin-left: auto;
+      z-index: 6;
+    }
+  }
+}
+
+@media (max-height: breakpoint.$max-height-160) {
+  .header {
+    position: static;
+    padding: 0;
   }
 }

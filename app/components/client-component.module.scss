@@ -22,3 +22,13 @@
     }
   }
 }
+
+@media (max-height: breakpoint.$max-height-730) {
+  .wrap {
+    height: auto;
+
+    > .wrap__main {
+      overflow: visible;
+    }
+  }
+}
