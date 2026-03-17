@@ -9,7 +9,7 @@ export default function SectionTitle(props: Props) {
 
   return (
     <div className={styles.title__wrap}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title} data-testid="title">{title}</h2>
     </div>
   );
 }
