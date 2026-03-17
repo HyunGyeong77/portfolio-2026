@@ -8,11 +8,10 @@
 
   &.hidden {display: none;}
 
-  &.hide {
-    justify-content: right;
-    
+  &.hide {  
     > .header__info > div {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
     }
   }
 
