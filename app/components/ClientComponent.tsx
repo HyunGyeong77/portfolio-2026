@@ -57,7 +57,7 @@ export default function ClientComponent() {
       <PageChangeContext value={{mainMenuHide}}>
         <CursorContext value={cursorTargetChange}>
           <PageContext.Provider value={page}>
-            {showMainMenu && <MainMenu mainMenuRef={mainMenuRef} />}
+            <MainMenu mainMenuRef={mainMenuRef} showMainMenu={showMainMenu} />
             <UiHideContext.Provider value={{uiHide, setUiHide}}>
               <Header />
               <main className={clsx(
