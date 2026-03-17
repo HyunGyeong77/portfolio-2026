@@ -4,6 +4,8 @@
   width: 50px;
   height: auto;
   display: flex;
+
+  &.disabled {opacity: 50%;}
 }
 
 @media (min-width: breakpoint.$tablet) {

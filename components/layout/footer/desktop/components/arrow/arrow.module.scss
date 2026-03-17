@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
 
+  &.disabled {opacity: 50%;}
+
   > .button__content-box {
     position: absolute;
     top: 0;

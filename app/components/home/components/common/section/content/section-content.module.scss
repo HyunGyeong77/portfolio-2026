@@ -4,6 +4,7 @@
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
+  opacity: 0;
 
   &::-webkit-scrollbar {
     width: 4px;
