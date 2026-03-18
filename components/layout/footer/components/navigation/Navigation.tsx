@@ -27,7 +27,7 @@ export default function Navigation(props: Props) {
         isMenuOpen && styles.open,
         uiHideContext?.uiHide && styles.hide,
       )}
-      aria-hidden={isMenuOpen}
+      inert={!isMenuOpen}
     >
       <li>
         <NavigationBtn
