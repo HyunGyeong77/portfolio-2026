@@ -52,10 +52,3 @@
     }
   }
 }
-
-@media (max-height: breakpoint.$max-height-160) {
-  .header {
-    position: static;
-    padding: 0;
-  }
-}
