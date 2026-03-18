@@ -41,15 +41,24 @@ export default function Menu(props: Props) {
         <div className={styles["menu__section-box"]}>
           <SectionButton 
             content={pageList.about[0].toUpperCase() + pageList.about.slice(1)}
-            onClick={() => pageChange?.mainMenuHide(pageList.about)}
+            onClick={() => {
+              pageChange?.mainMenuHide(pageList.about);
+              closeBtnClick();
+            }}
           />
           <SectionButton 
             content={pageList.skills[0].toUpperCase() + pageList.skills.slice(1)}
-            onClick={() => pageChange?.mainMenuHide(pageList.skills)}
+            onClick={() => {
+              pageChange?.mainMenuHide(pageList.skills);
+              closeBtnClick();
+            }}
           />
           <SectionButton 
             content={pageList.projects[0].toUpperCase() + pageList.projects.slice(1)}
-            onClick={() => pageChange?.mainMenuHide(pageList.projects)}
+            onClick={() => {
+              pageChange?.mainMenuHide(pageList.projects);
+              closeBtnClick();
+            }}
           />
         </div>
       </div>
