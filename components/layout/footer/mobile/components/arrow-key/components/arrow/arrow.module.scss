@@ -3,6 +3,8 @@
 .arrow {
   display: flex;
   width: 3.5rem;
+
+  &.disabled {opacity: 50%;}
 }
 
 .prev {transform: scaleX(-1);}
