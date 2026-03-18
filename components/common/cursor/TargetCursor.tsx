@@ -29,6 +29,9 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
   const tickerFnRef = useRef<(() => void) | null>(null);
   const activeStrengthRef = useRef({ current: 0 });
 
+  // mouse 좌표
+  const mousePosRef = useRef<{x: number, y: number}>({x: 0, y: 0});
+
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -89,6 +92,25 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     createSpinTimeline();
 
     const tickerFn = () => {
+      const {x, y} = mousePosRef.current;
+      const el = document.elementFromPoint(x, y);
+      const target = el?.closest(targetSelector);
+
+      // 더 이상 target이 없으면 제거
+      if(!target) {
+        if(activeTarget) {
+          currentLeaveHandler?.();
+        }
+        return;
+      }
+
+      // 다른 target으로 바뀌었으면 교체
+      if(target !== activeTarget) {
+        currentLeaveHandler?.();
+        activateTarget(target);
+        return;
+      }
+
       if (!targetCornerPositionsRef.current || !cursorRef.current || !cornersRef.current) {
         return;
       }
@@ -117,7 +139,11 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 
     tickerFnRef.current = tickerFn;
 
-    const moveHandler = (e: MouseEvent) => moveCursor(e.clientX, e.clientY);
+    const moveHandler = (e: MouseEvent) => {
+      // 현재 마우스 좌표 저장
+      mousePosRef.current = {x: e.clientX, y: e.clientY};
+      moveCursor(e.clientX, e.clientY);
+    };
     window.addEventListener('mousemove', moveHandler);
 
     const scrollHandler = () => {
@@ -144,64 +170,14 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       if (!dotRef.current) return;
       gsap.to(dotRef.current, { scale: 1, duration: 0.3 });
       gsap.to(cursorRef.current, { scale: 1, duration: 0.2 });
-
-      if(!isActiveRef.current) return;
-
-      gsap.ticker.remove(tickerFnRef.current!);
-      isActiveRef.current = false;
-      targetCornerPositionsRef.current = null;
-      gsap.set(activeStrengthRef.current, { current: 0, overwrite: true });
-      activeTarget = null;
-      if (cornersRef.current) {
-        const corners = Array.from(cornersRef.current);
-        gsap.killTweensOf(corners);
-        const { cornerSize } = constants;
-        const positions = [
-          { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },
-          { x: cornerSize * 0.5, y: -cornerSize * 1.5 },
-          { x: cornerSize * 0.5, y: cornerSize * 0.5 },
-          { x: -cornerSize * 1.5, y: cornerSize * 0.5 }
-        ];
-        const tl = gsap.timeline();
-        corners.forEach((corner, index) => {
-          tl.to(corner, { x: positions[index].x, y: positions[index].y, duration: 0.3, ease: 'power3.out' }, 0);
-        });
-      }
-      resumeTimeout = setTimeout(() => {
-        if (!activeTarget && cursorRef.current && spinTl.current) {
-          const currentRotation = gsap.getProperty(cursorRef.current, 'rotation') as number;
-          const normalizedRotation = currentRotation % 360;
-          spinTl.current.kill();
-          spinTl.current = gsap
-            .timeline({ repeat: -1 })
-            .to(cursorRef.current, { rotation: '+=360', duration: spinDuration, ease: 'none' });
-          gsap.to(cursorRef.current, {
-            rotation: normalizedRotation + 360,
-            duration: spinDuration * (1 - normalizedRotation / 360),
-            ease: 'none',
-            onComplete: () => {
-              spinTl.current?.restart();
-            }
-          });
-        }
-        resumeTimeout = null;
-      }, 50);
     };
 
     window.addEventListener('mousedown', mouseDownHandler);
     window.addEventListener('mouseup', mouseUpHandler);
 
-    const enterHandler = (e: MouseEvent) => {
-      const directTarget = e.target as Element;
-      const allTargets: Element[] = [];
-      let current: Element | null = directTarget;
-      while (current && current !== document.body) {
-        if (current.matches(targetSelector)) {
-          allTargets.push(current);
-        }
-        current = current.parentElement;
-      }
-      const target = allTargets[0] || null;
+    // 현재 요소를 cursor target으로 활성화하고
+    // 코너 위치, 애니메이션, ticker 등을 초기화/시작하는 함수
+    const activateTarget = (target: Element) => {
       if (!target || !cursorRef.current || !cornersRef.current) return;
       if (activeTarget === target) return;
       if (activeTarget) {
@@ -246,7 +222,6 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       });
 
       const leaveHandler = () => {
-        gsap.ticker.remove(tickerFnRef.current!);
         isActiveRef.current = false;
         targetCornerPositionsRef.current = null;
         gsap.set(activeStrengthRef.current, { current: 0, overwrite: true });
@@ -289,6 +264,20 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       };
       currentLeaveHandler = leaveHandler;
       target.addEventListener('mouseleave', leaveHandler);
+    }
+
+    const enterHandler = (e: MouseEvent) => {
+      const directTarget = e.target as Element;
+      const allTargets: Element[] = [];
+      let current: Element | null = directTarget;
+      while (current && current !== document.body) {
+        if (current.matches(targetSelector)) {
+          allTargets.push(current);
+        }
+        current = current.parentElement;
+      }
+      const target = allTargets[0] || null;
+      activateTarget(target);
     };
 
     window.addEventListener('mouseover', enterHandler as EventListener);
