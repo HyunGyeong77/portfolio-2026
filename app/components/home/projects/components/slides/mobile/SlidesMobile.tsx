@@ -25,6 +25,8 @@ export default function SlidesMobile(props: Props) {
   const swiperRef = useRef<SwiperClass>(null);
   const slides = useMemo(() => Object.values(curSlide), [curSlide]);
   const noneSlide = slides.length === 0;
+  const isSlideLoop = slides.length > 3;
+  const loopSlides = [...slides, ...slides, ...slides];
 
   // height 730px를 기준으로 boolean 값 결정
   const [isSwiper, setIsSwiper] = useState<boolean>(false);
@@ -50,6 +52,28 @@ export default function SlidesMobile(props: Props) {
       setProgress(1);
     }
   }, [isSwiper]);
+
+  const swiperSlideComponent = (slides: CardType[]) => {
+    return (
+      slides.map((slide, index) => {
+        const {title, describe, skills, tags, githubUrl, visitUrl, bg} = slide;
+
+        return (
+          <SwiperSlide key={title + index}>
+            <Card 
+              title={title}
+              describe={describe}
+              skills={skills}
+              tags={tags}
+              githubUrl={githubUrl}
+              visitUrl={visitUrl}
+              bg={bg}
+            />
+          </SwiperSlide>
+        );
+      })
+    );
+  }
   
   return (
     <>
@@ -61,9 +85,9 @@ export default function SlidesMobile(props: Props) {
           className={styles.slides__swiper}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            setActiveIndex(swiper.realIndex);
+            setActiveIndex(swiper.realIndex % slides.length);
           }}
-          onSlideChange={(swiper) => {setActiveIndex(swiper.realIndex);}}
+          onSlideChange={(swiper) => {setActiveIndex(swiper.realIndex % slides.length);}}
           onSlideChangeTransitionEnd={(swiper) => {
             swiper.slides.forEach((slide) => {
               const aTags: NodeList = slide.querySelectorAll("a");
@@ -83,27 +107,12 @@ export default function SlidesMobile(props: Props) {
           mousewheel={true}
           slidesPerView="auto"
           centeredSlides={true}
-          loop={slides.length >= 2}
+          loop={isSlideLoop}
           keyboard={true}
           simulateTouch={false}
         >
-          {slides.map((project, index) => {
-            const {title, describe, skills, tags, githubUrl, visitUrl, bg} = project;
-
-            return (
-              <SwiperSlide key={title + index}>
-                <Card 
-                  title={title}
-                  describe={describe}
-                  skills={skills}
-                  tags={tags}
-                  githubUrl={githubUrl}
-                  visitUrl={visitUrl}
-                  bg={bg}
-                />
-              </SwiperSlide>
-            );
-          })}
+          {swiperSlideComponent(slides)}
+          {isSlideLoop && swiperSlideComponent(loopSlides)}
         </Swiper>
       )}
       {!noneSlide ?
