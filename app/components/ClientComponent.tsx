@@ -29,6 +29,7 @@ export const AnimationContext = createContext<(({pageName, isNext}: {pageName?: 
 export default function ClientComponent() {
   const [page, setPage] = useState<string>(pageList.mainMenu);
   const [uiHide, setUiHide] = useState<boolean>(false);
+  const [animating, setAnimating] = useState<boolean>(false);
 
   // className
   const cursorTargetChange = (pageName: string) => {
@@ -38,6 +39,7 @@ export default function ClientComponent() {
   // mainMenu animation
   const mainMenuRef = useRef<HTMLDivElement | null>(null);
   const [showMainMenu, setShowMainMenu] = useState<boolean>(true);
+  const tlMainMenu = useRef<GSAPTimeline | null>(null);
 
   useEffect(() => {
     if(showMainMenu) {
@@ -46,10 +48,15 @@ export default function ClientComponent() {
   }, [showMainMenu]);
 
   const mainMenuHide = (pageName: string) => {
-    gsap.to(mainMenuRef.current, {
+    if(animating) return;
+    if(!tlMainMenu.current) tlMainMenu.current = gsap.timeline();
+
+    tlMainMenu.current?.to(mainMenuRef.current, {
       opacity: 0,
       duration: 0.8,
+      onStart: () => setAnimating(true),
       onComplete: () => {
+        setAnimating(false);
         setShowMainMenu(false);
       }
     });
@@ -59,9 +66,11 @@ export default function ClientComponent() {
   }
   
   const mainMenuOpen = () => {
-    gsap.to(mainMenuRef.current, {
+    tlMainMenu.current?.to(mainMenuRef.current, {
       opacity: 1,
-      duration: 0.8
+      duration: 0.8,
+      onStart: () => setAnimating(true),
+      onComplete: () => setAnimating(false)
     });
 
     setSectionNoneAnim(false);
@@ -72,6 +81,7 @@ export default function ClientComponent() {
   const tlDisappear = useRef<GSAPTimeline | null>(null);
   const [sectionNoneAnim, setSectionNoneAnim] = useState<boolean>(false);
 
+  // mainMenu Page -> section Page 로 넘어갈 때 mainMenu Page만 애니메이션 실행
   useEffect(() => {
     const {sectionContent, sectionTitle} = sectionElements();
 
@@ -85,6 +95,7 @@ export default function ClientComponent() {
     }
   }, [sectionNoneAnim]);
 
+  // mainMenu Page를 제외한 section Pages appear Animation
   useEffect(() => {
     if(page === pageList.mainMenu) return;
     if(showMainMenu) return;
@@ -93,7 +104,6 @@ export default function ClientComponent() {
 
     const appearPageAnim = () => {
       if(!tlAppear.current) tlAppear.current = gsap.timeline();
-      if (tlAppear.current.isActive()) return;
       
       tlAppear.current.clear();
 
@@ -101,12 +111,16 @@ export default function ClientComponent() {
       tlAppear.current.set(sectionContent, {opacity: 0});
 
       tlAppear.current.to(sectionTitle, {y: 0, opacity: 1, duration: 0.3});
-      tlAppear.current.to(sectionContent, {opacity: 1, duration: 0.5, delay: 0.1});
+      tlAppear.current.to(sectionContent, {
+        opacity: 1, duration: 0.5, delay: 0.1,
+        onComplete: () => setAnimating(false)
+      });
     }
 
     appearPageAnim();
   }, [page]);
 
+  // mainMenu Page를 제외한 section Pages disappear Animation
   const pageChangeAnim = ({pageName, isNext}: {pageName?: string, isNext?: boolean}) => {
     if(page === pageName) return;
 
@@ -114,18 +128,24 @@ export default function ClientComponent() {
 
     const disappearPageAnim = () => {
       if(pageName === pageList.mainMenu) {
+        if(animating) return;
+        if(!tlMainMenu.current) tlMainMenu.current = gsap.timeline();
+
         setShowMainMenu(true);
         setPage(pageName);
         return;
       }
 
+      if(animating) return;
       if(!tlDisappear.current) tlDisappear.current = gsap.timeline();
-      if(tlDisappear.current.isActive()) return;
 
       tlDisappear.current.clear();
 
       tlDisappear.current
-        .to(sectionTitle, {y: "-150%", opacity: 0, duration: 0.3})
+        .to(sectionTitle, {
+          y: "-150%", opacity: 0, duration: 0.3,
+          onStart: () => setAnimating(true)
+        })
         .to(sectionContent, {
           opacity: 0, 
           duration: 0.5,
