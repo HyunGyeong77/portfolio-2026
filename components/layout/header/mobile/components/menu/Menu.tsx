@@ -20,7 +20,7 @@ export default function Menu(props: Props) {
       isMenuOpen && styles["menu-open"],
       hide
     )}
-      aria-hidden={isMenuOpen}>
+      aria-hidden={!isMenuOpen}>
       <Stats 
         statsWidth="313px"
         statsHeight="158px"
