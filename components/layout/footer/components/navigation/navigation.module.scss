@@ -29,3 +29,11 @@
     z-index: 0;
   }
 }
+
+@media ((max-width: breakpoint.$tablet) and (max-height: breakpoint.$max-height-440)) or 
+((min-width: breakpoint.$tablet) and ((max-height: 570px) and (min-height: breakpoint.$max-height-440))) {
+  .navigation {
+    flex-direction: row;
+    left: 0;
+  }
+}
