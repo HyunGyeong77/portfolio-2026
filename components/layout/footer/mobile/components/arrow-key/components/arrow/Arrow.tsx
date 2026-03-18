@@ -21,7 +21,7 @@ export default function Arrow(props: Props) {
       styles.arrow,
       (page !== pageList.mainMenu) && "cursor-target",
       isPrev && styles.prev
-    )} onClick={() => animationContext({isNext: isPrev})}
+    )} onClick={() => animationContext({isNext: !isPrev})}
     >
       <ArrowSvg />
     </button>
