@@ -187,7 +187,7 @@ export default function ClientComponent() {
                 {(page === pageList.projects) && <Projects />}
               </main>
               <AnimationContext.Provider value={pageChangeAnim}>
-                <Footer />
+                <Footer animating={animating} />
               </AnimationContext.Provider>
             </UiHideContext.Provider>
           </PageContext.Provider>
