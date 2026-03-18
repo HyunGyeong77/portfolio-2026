@@ -40,12 +40,15 @@ export default function More({animating}: {animating: boolean}) {
       uiHideContext?.uiHide && styles.hide
     )}>
       <button 
+        id="footer-navigation-button"
         className={`${styles.more__button} ${(page !== pageList.mainMenu) && "cursor-target"} ${isMenuOpen && styles["menu-open"]}`}
         onClick={toggleClick}
+        aria-haspopup="menu"
+        aria-expanded={isMenuOpen}
       >
         <MoreSvg />
       </button>
-      <Navigation isMenuOpen={isMenuOpen} />
+      <Navigation isMenuOpen={isMenuOpen} mobile={true} />
     </div>
   );
 }

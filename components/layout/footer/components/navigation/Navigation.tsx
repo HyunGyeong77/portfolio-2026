@@ -12,10 +12,11 @@ import clsx from "clsx";
 
 type Props = {
   isMenuOpen?: boolean;
+  mobile?: boolean
 };
 
 export default function Navigation(props: Props) {
-  const { isMenuOpen } = props;
+  const { isMenuOpen, mobile } = props;
   const uiHideContext = useContext(UiHideContext);
   const animationContext = useContext(AnimationContext);
   if (!animationContext) return;
@@ -27,7 +28,8 @@ export default function Navigation(props: Props) {
         isMenuOpen && styles.open,
         uiHideContext?.uiHide && styles.hide,
       )}
-      inert={!isMenuOpen}
+      role={mobile ? "menu" : undefined}
+      aria-labelledby={mobile ? "footer-navigation-button" : undefined}
     >
       <li>
         <NavigationBtn
