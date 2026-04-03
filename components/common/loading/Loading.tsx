@@ -53,7 +53,7 @@ export default function Loading() {
       } else {
         isComplete();
       }
-    }, 1000);
+    }, 200);
 
     isComplete();
 
