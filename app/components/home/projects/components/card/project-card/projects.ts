@@ -7,8 +7,10 @@ import Petgo from './assets/img/petgo.png';
 import Hodadoc from './assets/img/hodadoc.png';
 import Jwimovie from './assets/img/jwimovie.png';
 import Sweat from './assets/img/sweat.png';
+import Portfolio2025a from './assets/img/portfolio-2025.png';
+import Portfolio2025b from './assets/img/portfolio-2025-2.png';
 
-const {next, react, scss, ts, postgres, python} = skill;
+const {next, react, scss, ts, postgres, python, js, html, css} = skill;
 const {responsive, interactive, fixed} = tag;
 
 export const projects: Record<string, CardType> = {
@@ -29,6 +31,24 @@ export const projects: Record<string, CardType> = {
     githubUrl: githubShortcut("hodadoc"),
     visitUrl: "https://hyungyeong77.github.io/hodadoc",
     bg: Hodadoc
+  },
+  portfolio2025b: {
+    title: "portfolio-2025-2",
+    describe: "2025년 2번째 포트폴리오 사이트",
+    skills: [next, scss, ts],
+    tags: [responsive, interactive],
+    githubUrl: githubShortcut("portfolio-2025-2"),
+    visitUrl: "https://portfolio-2025-2-inky.vercel.app",
+    bg: Portfolio2025b
+  },
+  portfolio2025a: {
+    title: "portfolio-2025",
+    describe: "2025년 포트폴리오 사이트",
+    skills: [html, css, js],
+    tags: [responsive, interactive],
+    githubUrl: githubShortcut("portfolio-2025"),
+    visitUrl: "https://hyungyeong77.github.io/portfolio-2025",
+    bg: Portfolio2025a
   },
   jwimovie: {
     title: "Jwimovie",

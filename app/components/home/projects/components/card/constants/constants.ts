@@ -9,7 +9,9 @@ export const skill: Type = {
   js: "JavaScript",
   postgres: "PostgreSQL", 
   python: "Python",
-  html: "HTML", scss: "SCSS",
+  html: "HTML5",
+  css: "CSS3", 
+  scss: "SCSS",
 }
 
 export const tag: Type = {
